@@ -27,9 +27,15 @@
     
     NSDate *time = [NSDate date];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc]init];
-    [dateFormat setDateFormat:@"yyyy年M月d日"];
+    [dateFormat setDateFormat:@"yyyy年M月d日 hh:mm"];
     NSString *date = [dateFormat stringFromDate:time];
     NSLog(@"日期：%@",date);
+    
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    NSDate *three = [cal dateByAddingUnit:NSCalendarUnitMinute value:200 toDate:time options:0];
+    
+    NSString *threeHrLater = [dateFormat stringFromDate:three];
+    NSLog(@"日期：%@",threeHrLater);
     
 }
 
