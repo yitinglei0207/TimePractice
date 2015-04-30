@@ -37,6 +37,10 @@
     NSString *threeHrLater = [dateFormat stringFromDate:three];
     NSLog(@"日期：%@",threeHrLater);
     
+    NSDate *nextSun = [cal nextDateAfterDate:time matchingUnit:NSCalendarUnitWeekday value:1 options:NSCalendarMatchNextTime];
+    //NSString *threeHrLater = [dateFormat stringFromDate:three];
+    NSLog(@"日期：%@",[dateFormat stringFromDate:nextSun]);
+    
 }
 
 @end
